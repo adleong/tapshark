@@ -13,6 +13,8 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+// Event collation logic copied from https://github.com/linkerd/linkerd2/blob/main/viz/cmd/top.go
+
 type (
 	Stream struct {
 		Event   *tapPb.TapEvent

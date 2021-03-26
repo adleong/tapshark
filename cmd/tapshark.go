@@ -89,13 +89,13 @@ func NewCmdTapShark() *cobra.Command {
   * statefulsets
   * services (only supported as a --to resource)`,
 		Example: `  # tap the web deployment in the default namespace
-  linkerd viz tapshark deploy/web
+  linkerd tapshark deploy/web
 
   # tap the web-dlbvj pod in the default namespace
-  linkerd viz tapshark pod/web-dlbvj
+  linkerd tapshark pod/web-dlbvj
 
   # tap the test namespace, filter by request to prod namespace
-  linkerd viz tapshark ns/test --to ns/prod`,
+  linkerd tapshark ns/test --to ns/prod`,
 		Args:      cobra.RangeArgs(1, 2),
 		ValidArgs: vizpkg.ValidTargets,
 		RunE: func(cmd *cobra.Command, args []string) error {
