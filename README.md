@@ -2,6 +2,8 @@
 
 A wireshark inspired ncurses-style command line interface for Linkerd tap.
 
+![Screenshot](tapshark.png)
+
 ## Requirements
 
 Requires [Linkerd 2.10.0](https://github.com/linkerd/linkerd2/releases/tag/stable-2.10.0)
