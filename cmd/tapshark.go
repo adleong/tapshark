@@ -14,7 +14,7 @@ import (
 	pkgcmd "github.com/linkerd/linkerd2/pkg/cmd"
 	"github.com/linkerd/linkerd2/pkg/healthcheck"
 	"github.com/linkerd/linkerd2/pkg/k8s"
-	vizpkg "github.com/linkerd/linkerd2/viz/pkg"
+	"github.com/linkerd/linkerd2/viz/pkg/util"
 	"github.com/linkerd/linkerd2/viz/pkg/api"
 	tapPb "github.com/linkerd/linkerd2/viz/tap/gen/tap"
 	tapPkg "github.com/linkerd/linkerd2/viz/tap/pkg"
@@ -97,7 +97,7 @@ func NewCmdTapShark() *cobra.Command {
   # tap the test namespace, filter by request to prod namespace
   linkerd tapshark ns/test --to ns/prod`,
 		Args:      cobra.RangeArgs(1, 2),
-		ValidArgs: vizpkg.ValidTargets,
+		ValidArgs: util.ValidTargets,
 		RunE: func(cmd *cobra.Command, args []string) error {
 			if options.namespace == "" {
 				options.namespace = pkgcmd.GetDefaultNamespace(options.kubeconfigPath, options.kubeContext)
